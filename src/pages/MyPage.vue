@@ -15,9 +15,15 @@
   </div>
 </template>
 <script>
-  //import VaCarousel from '../components/vm-image-carousel'
   import VmComCarousel from '../components/vm-com-carousel'
+  import {cityGuess} from '../service/getData';
   export default {
+    mounted(){
+      /**
+      cityGuess().then(res => {
+        alert(res);
+      })*/
+    },
     components:{
     //  VaCarousel
       VmComCarousel
