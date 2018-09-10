@@ -60,24 +60,44 @@
           {
             id: 1,
             src:
-              '../assets/img/1.jpg'
+              require('../assets/img/1.jpg')
           },
           {
             id: 2,
             src:
-              '../assets/img/2.jpg'
+              require('../assets/img/2.jpg')
           },
           {
             id: 3,
             src:
-              '../assets/img/3.jpg'
+              require('../assets/img/3.jpg')
           },
           {
             id: 4,
             src:
-              '../assets/img/4.jpg'
+              require('../assets/img/4.jpg')
+          },
+          {
+            id: 5,
+            src:
+              require('../assets/img/5.jpg')
+          },
+          {
+            id: 6,
+            src:
+              require('../assets/img/4.jpg')
+          },
+          {
+            id: 7,
+            src:
+              require('../assets/img/3.jpg')
+          },
+          {
+            id: 8,
+            src:
+              require('../assets/img/logo.png')
           }
-          ]
+        ]
       }
     }
   }
