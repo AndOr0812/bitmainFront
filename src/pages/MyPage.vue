@@ -11,11 +11,14 @@
                 arrow="always"
                 @selectedItem="selectedItem"></VaCarousel>
                 -->
+    <VmChartBarLine title="Line Chart" :xAxisData="dataBar1.xAxisData" :series="dataBar1.series">
+    </VmChartBarLine>
     <vm-com-carousel @selectedItem="selectedItem"></vm-com-carousel>
   </div>
 </template>
 <script>
-  import VmComCarousel from '../components/vm-com-carousel'
+  import VmComCarousel from '../components/vm-com-carousel';
+  import VmChartBarLine from '../components/vm-chart-bar-line';
   import {cityGuess} from '../service/getData';
   export default {
     mounted(){
@@ -25,12 +28,26 @@
       })*/
     },
     components:{
-    //  VaCarousel
-      VmComCarousel
+      VmComCarousel,
+      VmChartBarLine
     },
     methods:{
       selectedItem(item, index){
         alert(`点击了第${index}张图片`)
+      }
+    },
+    data:function () {
+      return {
+        dataBar1: {
+          xAxisData: ['比特币', '以太币', '莱特币', '星云币', 'EOS', '人民币'],
+          series: [
+            {
+              name: '销量',
+              type: 'bar',
+              data: [50, 200, 360, 100, 100, 200]
+            }
+          ]
+        }
       }
     }
   }

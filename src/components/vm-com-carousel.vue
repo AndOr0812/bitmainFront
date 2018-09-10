@@ -88,7 +88,53 @@
   };
 </script>
 
-<style>
+<style scoped lang="less">
+  .vm-com-carousel{
+    .slide{
+      width: 720px;
+      height: 94px;
+      position: relative;
+      //top: 7px;
+      margin: auto;
+      //left: 10px;
+      overflow: hidden; /**为了实现无缝滚动*/
+      ul{
+        height: 94px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        li{
+          width: 120px;
+          height: 94px;
+          float: left;
+          margin-right: 10px;
+          background: url(../assets/img/logo.png) no-repeat center center;
+          cursor: pointer;
+          display: inline;
+          img {
+            width: 120px;
+            height: 94px;
+          }
+        }
+      }
+    }
 
-
+    .page{
+      position: relative;
+    }
+    .preview{
+      position: absolute;
+      font-size: 16px;
+      color: #409eff;
+      cursor: pointer;
+      left: 0;
+    }
+    .next {
+      position: absolute;
+      font-size: 16px;
+      color: #409eff;
+      cursor: pointer;
+      right: 0;
+    }
+  }
 </style>
