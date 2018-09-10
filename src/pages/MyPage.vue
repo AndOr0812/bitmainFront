@@ -13,12 +13,16 @@
                 -->
     <VmChartBarLine title="Line Chart" :xAxisData="dataBar1.xAxisData" :series="dataBar1.series">
     </VmChartBarLine>
-    <vm-com-carousel @selectedItem="selectedItem"></vm-com-carousel>
+    <vm-com-carousel @selectedItem="selectedItem" :items="iconItemLists"></vm-com-carousel>
+    <div style="width: 502px; margin: auto">
+      <vm-data-picker :picked="picked"></vm-data-picker>
+    </div>
   </div>
 </template>
 <script>
   import VmComCarousel from '../components/vm-com-carousel';
   import VmChartBarLine from '../components/vm-chart-bar-line';
+  import VmDataPicker from '../components/vm-date-picker'
   import {cityGuess} from '../service/getData';
   export default {
     mounted(){
@@ -29,11 +33,15 @@
     },
     components:{
       VmComCarousel,
-      VmChartBarLine
+      VmChartBarLine,
+      VmDataPicker
     },
     methods:{
       selectedItem(item, index){
         alert(`点击了第${index}张图片`)
+      },
+      picked(year, month, date) {
+        console.warn(`你选择了${year}年${month}月${date}日`)
       }
     },
     data:function () {
@@ -47,7 +55,29 @@
               data: [50, 200, 360, 100, 100, 200]
             }
           ]
-        }
+        },
+        iconItemLists:[
+          {
+            id: 1,
+            src:
+              '../assets/img/1.jpg'
+          },
+          {
+            id: 2,
+            src:
+              '../assets/img/2.jpg'
+          },
+          {
+            id: 3,
+            src:
+              '../assets/img/3.jpg'
+          },
+          {
+            id: 4,
+            src:
+              '../assets/img/4.jpg'
+          }
+          ]
       }
     }
   }

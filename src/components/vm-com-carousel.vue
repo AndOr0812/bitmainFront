@@ -2,6 +2,7 @@
   <div class="vm-com-carousel">
     <div class="slide" ref="slide">
         <ul class="item" ref="item">
+<!--
           <li><img src="../assets/img/1.jpg" @click="selectedItem()"/></li>
           <li><img src="../assets/img/2.jpg"/></li>
           <li><img src="../assets/img/3.jpg"/></li>
@@ -14,6 +15,11 @@
           <li><img src="../assets/img/logo.png"/></li>
           <li><img src="../assets/img/logo.png"/></li>
           <li><img src="../assets/img/logo.png"/></li>
+-->
+
+          <li v-for="item in this.items">
+            <img v-bind:src="item.src"/>
+          </li>
         </ul>
     </div>
 
@@ -51,9 +57,14 @@
       this.totalPage = aLiSmall.length / showNum;
       oSlide.style.width = this.moveWidth + 'px';
       aUiItem.style.width = aLiSmall.length * aLiSmall[0].offsetWidth + (aLiSmall.length)*marginSpace + 'px';
+
+    //  alert(this.items.length);
     },
     props: {
-
+      items:{
+        type:Array,
+        default: []
+      }
     },
     data() {
       return {
